@@ -52,10 +52,6 @@ const Climate = () => {
       'thunderstorm': thunderstormIcon
     };
 
-    if (description.includes('overcast clouds')) {
-      return brokenIcon;
-    }
-
     return iconMap[description] || solIcon; // Icono predeterminado si no se encuentra una descripción coincidente
   };
 
@@ -99,11 +95,7 @@ const Climate = () => {
               ) : null}
             </div>
           </div>
-          <img
-            className="weather-icon"
-            src={getWeatherIcon(data.weather[0]?.description)}
-            alt="Icono de clima"
-          />
+          <img className="weather-icon" src={getWeatherIcon(data.weather[0]?.description)} alt="Icono de clima" />
         </div>
         <button className="custom-button" onClick={toggleTemperatureUnit}>
           Cambiar a {isCelsius ? 'F°' : 'C°'}
@@ -114,4 +106,3 @@ const Climate = () => {
 };
 
 export default Climate;
-// 
